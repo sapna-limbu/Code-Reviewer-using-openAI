@@ -46,7 +46,7 @@ def code_rev(prompt, client):
 
 # Streamlit app
 def main():
-    st.title("Python Code Review App")
+    st.title("Python AI Code Reviewer")
     prompt = st.text_area("Enter your code:")
 
     if st.button("Submit"):
