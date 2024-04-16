@@ -37,7 +37,7 @@ def code_rev(prompt, client):
         model="gpt-3.5-turbo",
         messages=[
            {"role": "system", "content": """you are a helpful AI Assistant. 
-                                      Given a Python code review app for bug detection and fixes"""},  
+                                      Given a Python code review app for bug detection and  write the corrrected code"""},  
            {"role": "user", "content": prompt}
        ]
    )
@@ -49,11 +49,11 @@ def main():
     st.title("Python AI Code Reviewer")
     prompt = st.text_area("Enter your code:")
 
-    if st.button("Submit"):
+    if st.button("Generate"):
         client = initialize_openai_client()
         if client:
             response = code_rev(prompt, client)
-            st.write("Review Feedback:")
+            st.write("Review code:")
             st.write(response)
 
 if __name__ == "__main__":
